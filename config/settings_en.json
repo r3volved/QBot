@@ -1,0 +1,11 @@
+{
+    
+    "botToken":"YOUR_BOT_TOKEN",
+    
+    "master":"YOUR_USER_ID",
+    
+    "version":"QBot v0.1",
+        
+    "adminRole":"botadmins"
+    
+}

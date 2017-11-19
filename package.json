@@ -1,0 +1,19 @@
+{
+  "name": "QBot",
+  "version": "1.0.0",
+  "description": "Discord bot to remove any messages that are not in the form of a question",
+  "main": "qbot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:443/r3volved/QBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
+}
