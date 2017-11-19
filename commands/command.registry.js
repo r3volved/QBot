@@ -12,12 +12,12 @@ class CommandRegistry {
     	
     	try {
 	    	//Allow admin to post anything
-	    	if( this.message.member.roles.find("name", this.config.settings.adminRole) /*|| this.message.author.id === this.config.settings.master*/ ) { return; }			
+	    	if( this.message.member.roles.find("name", this.config.settings.adminRole) || this.message.author.id === this.config.settings.master ) { return; }			
 	    		
 	    	//Check user message
 	        if (this.message.content) {
 	        	
-	            let splittingPattern = /[\w|\s|+-.,!@#$%^&*();\/|<>"']+[?]$/gm;
+	            let splittingPattern = /[\w|\s|+-.,!@#$%^&*();\/|<>"']+[?]/gm;
 	            let msgArray = this.message.content.match(splittingPattern);
 	            
 	            if ( typeof msgArray === "undefined" || msgArray === null ) {
