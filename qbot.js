@@ -17,6 +17,23 @@ client.on('message', message => {
 
 	try {
 		
+		//Tell me if someone is DMing the bot...
+		if( message.channel.type === "dm" && message.author.id !== config.settings.master ) { 
+			
+			let embed = new Discord.RichEmbed();
+			embed.setAuthor(`Incoming DM:`,message.author.displayAvatarURL);
+			embed.addField(`${message.author.tag} [${message.author.id}]`,`${message.content}\n_`);
+			embed.addField(`Reply back:`,"```js\n"+`! this.config.client.fetchUser("${message.author.id}").then( user => user.send("REPLY TEXT TO USER") )`+"```");
+			embed.setFooter(config.settings.version);
+			embed.setTimestamp();
+			embed.setColor(0x2A6EBB);
+			
+			const master = config.client.fetchUser(config.settings.master);
+			master.then( (user) => { user.send({embed}); } );
+			
+		}
+
+		
 		const CommandRegistry = require("./commands/command.registry.js");
 		let registry = new CommandRegistry(config, message);
 		

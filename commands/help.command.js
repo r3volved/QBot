@@ -8,6 +8,7 @@ class HelpCommand extends Command {
 	
 	process() {
 		
+		console.log(`[Deleted] : ${this.message.channel.name} : ${this.message.content}`);
 		this.message.delete();
 		this.reply();
 		
